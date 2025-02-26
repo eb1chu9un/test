@@ -1,13 +1,39 @@
-Code Sample 1:
-    <RoU9g[kdz6AVlJej//{HSnDer0{5/5
-            xn=CuWZZGSS<QJr7D(}gw[t6N094CK<T
-    kV/6mH[BendD==P3FEGfK}91Y6ylPFPH7oeKab3(B4E
-Otmh}/=++OGhI3DWZ%YJQLDR<cUS*Vmu8H7+Gg94qlHce]
-            5nu5CJ<ynJ*-*PFFq8s6Cun2UwVeeo5<BSd0lkSa16AU
-dfgdfgweqw2323523sчсмисмисfdgdfgdfgdfsdfsdfsdfsfsfasfasf
-xcgxcgxdfgdfsdfsdffsddfgdfgdfgdіваівавапівві4545646
-dfdfgdfgdfsaasesdfgsdfgew345345вапвапвапdfsfsaweqwasd
-dfdfgddddddddddfetertetgdfgdcvbcvbcvbcertdgasfasfgdfgdertfdgdfgdfgdfgіваіваіва
-fdgdfgdfgdfwe4utyiuiofgvbxvcv afasdfasfasіваіваіва
-івdfgdgdіаівацкуцукуdsfsdfsdfіваіваіваів
-dfg
+import os
+import shlex
+
+def terminal_emulator():
+    current_dir = os.getcwd()
+    while True:
+        try:
+            command = input(f"{current_dir}$ ")
+            args = shlex.split(command)
+            if not args:
+                continue
+            
+            if args[0] == "exit":
+                break
+            elif args[0] == "pwd":
+                print(current_dir)
+            elif args[0] == "ls":
+                print(" ".join(os.listdir(current_dir)))
+            elif args[0] == "cd":
+                if len(args) > 1:
+                    new_dir = os.path.abspath(os.path.join(current_dir, args[1]))
+                    if os.path.isdir(new_dir):
+                        current_dir = new_dir
+                    else:
+                        print(f"cd: no such directory: {args[1]}")
+                else:
+                    print("cd: missing argument")
+            elif args[0] == "echo":
+                print(" ".join(args[1:]))
+            else:
+                print(f"{args[0]}: command not found")
+        except KeyboardInterrupt:
+            print("\nUse 'exit' to quit the terminal.")
+        except EOFError:
+            print("\nExiting terminal.")
+            break
+
+if __name__ == "__main__":
+    terminal_emulator()
