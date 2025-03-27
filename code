@@ -38,4 +38,3 @@ uWu
 
 if __name__ == "__main__":
     terminal_emulator()
-uWu
