@@ -1,0 +1,41 @@
+{
+"name": "My AI Agent",
+"description": "A powerful AI agent trained for specific tasks",
+"image": "ipfs://QmYourImageHash/agent-avatar.png",
+"external_url": "https://yourwebsite.com/agent/1",
+"model_hash": "sha256:abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890",
+"weights_url": "ipfs://QmYourWeightsHash/model-weights.safetensors",
+"version": "1.0.0",
+"capabilities": [
+"text-generation",
+"code-completion",
+"question-answering"
+],
+"model_type": "transformer",
+"model_architecture": "GPT-3",
+"framework": "pytorch",
+"parameters": 7000000000,
+"license": "MIT",
+"training_data": "Custom dataset + OpenWebText",
+"training_date": "2025-09-01",
+"attributes": [
+{
+"trait_type": "Model Size",
+"value": "7B"
+},
+{
+"trait_type": "Framework",
+"value": "PyTorch"
+},
+{
+"trait_type": "License",
+"value": "MIT"
+},
+{
+"trait_type": "Training Date",
+"value": "2025-09-01",
+"display_type": "date"
+}
+],
+"background_color": "1a1a2e"
+}
